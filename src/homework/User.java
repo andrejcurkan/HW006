@@ -1,10 +1,13 @@
 package homework;
 
+
 public class User {
     private final String name;
+    private final Persister persister;
 
-    public User(String name) {
+    public User(String name, Persister persister) {
         this.name = name;
+        this.persister = persister;
     }
 
     public String getName() {
@@ -16,7 +19,6 @@ public class User {
     }
 
     public void save() {
-        Persister persister = new Persister();
         persister.save(this);
     }
 }
